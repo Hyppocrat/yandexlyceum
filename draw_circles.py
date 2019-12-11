@@ -31,8 +31,7 @@ class Circles(QWidget):
         qp = QPainter()
         qp.begin(self)
         self.draw_crc(qp)
-        qp.end()     
-        self.update()      
+        qp.end()          
         
                       
 if __name__ == '__main__':
