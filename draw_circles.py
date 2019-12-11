@@ -13,6 +13,7 @@ class Circles(QWidget):
         self.setGeometry(100, 100, 500, 500)
         self.setWindowTitle('Случайные окружности')
         self.drawCircle = False
+        self.Circles = []
         draw_button = QPushButton('Лел', self)
         draw_button.resize(100, 50)
         draw_button.move(self.height() // 2, self.width() // 2)
@@ -27,8 +28,10 @@ class Circles(QWidget):
         qp.setBrush(QColor(255, 255, 0))
         ox = random.randint(100, 400)
         oy = random.randint(100, 400)
-        radius = random.randint(10, 90) 
-        qp.drawEllipse(ox, oy, radius, radius)
+        radius = random.randint(10, 90)
+        self.Circles.append((ox, oy, radius, radius))
+        for circles in self.Circles:
+            qp.drawEllipse(*circles)
         
        
     def paintEvent(self, event):
